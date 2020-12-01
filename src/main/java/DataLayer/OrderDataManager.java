@@ -32,14 +32,5 @@ public class OrderDataManager {
         return this.orders;
     }
     
-    public ArrayList<Order> getByUserId(int userID){
-        ArrayList<Order> output = new ArrayList(userID);
-        
-        for(Order order : orders){
-            if(order.getCustomerID() == userID){
-                output.add(order);
-            }
-        }
-        return output;
-    }
+    
 }

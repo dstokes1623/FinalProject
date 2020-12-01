@@ -33,14 +33,5 @@ public class OrderItemDataManager {
         return this.items;
         
     }
-    public ArrayList<OrderItem> getByOrderNumber(int orderNumber){
-        ArrayList<OrderItem> output = new ArrayList(orderNumber);
-        
-        for(OrderItem item : items){
-            if(item.getOrderNumber() == orderNumber){
-                output.add(item);
-            }
-        }
-        return output;
-    }
+    
 }
