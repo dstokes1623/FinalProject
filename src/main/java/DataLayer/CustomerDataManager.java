@@ -30,4 +30,15 @@ public class CustomerDataManager {
       
         return this.customers;
     }
+    
+    public ArrayList<Customer> getCustomerByUserID(int userID){
+        ArrayList<Customer> output = new ArrayList();
+     
+        for(Customer customer : this.customers){
+            if(customer.getCustomerID() == userID){
+                output.add(customer);
+            }
+        }
+        return output;
+    }
 }

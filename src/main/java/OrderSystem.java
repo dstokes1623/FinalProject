@@ -51,19 +51,19 @@ public class OrderSystem {
          OrderItem ordItem5 = new OrderItem(3, 3, 2, "Dog", 1, 200);
          OrderItem ordItem6 = new OrderItem(3, 3, 1, "Cat", 2, 200);
          
-         logger.logInfo("Creating users");
+//         logger.logInfo("Creating users");
          
          customerDM.create(cust1);
          customerDM.create(cust2);
          customerDM.create(cust3);
          
-         logger.logInfo("Creating orders");
+//         logger.logInfo("Creating orders");
          
          orderDM.create(order1);
          orderDM.create(order2);
          orderDM.create(order3);
          
-         logger.logInfo("Creating order items");
+//         logger.logInfo("Creating order items");
          
          orderItemDM.create(ordItem1);
          orderItemDM.create(ordItem2);
@@ -72,27 +72,40 @@ public class OrderSystem {
          orderItemDM.create(ordItem5);
          orderItemDM.create(ordItem6);
          
-         logger.logInfo("Creating products");
+//         logger.logInfo("Creating products");
          
          productDM.create(prod1);
          productDM.create(prod2);
          productDM.create(prod3);
          
-         logger.logInfo("Retrieving customers");
+//         logger.logInfo("Retrieving customers");
          
          ArrayList<Customer> allCustomers = customerDM.getAll();
-         System.out.println(allCustomers);
          
-         logger.logInfo("Retrieving orders");
+//         logger.logInfo("Retrieving orders");
          
          ArrayList<Order> allOrders = orderDM.getAll();
-         System.out.println(allOrders);
          
-         logger.logInfo("Retrieving order items");
+//         logger.logInfo("Retrieving order items");
          
          ArrayList<OrderItem> allOrderItems = orderItemDM.getAll();
-         System.out.println(allOrderItems);
+        
+//         logger.logInfo("Printing list of orders");
          
-         
+         for(Customer customer : allCustomers){
+             
+            System.out.println(customer + ": \n");
+            
+            for(Order order : allOrders){
+                if(customer.getCustomerID() == order.getCustomerID()){
+                    System.out.println("\t" + order);
+                    for(OrderItem item: allOrderItems){
+                        if(item.getOrderNumber() == order.getOrderNumber()){
+                        System.out.println("\t\t"+ item);
+                    }
+                }
+            }
+         }
+    }
     }
 }

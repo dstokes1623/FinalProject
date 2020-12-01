@@ -67,7 +67,7 @@ public class OrderItem {
 
     @Override
     public String toString() {
-        return "OrderItem{" + "orderNumber=" + orderNumber + ", lineNumber=" + lineNumber + ", productID=" + productID + ", productDescription=" + productDescription + ", quantity=" + quantity + ", price=" + price + '}';
+        return "OrderItem: " + "Order number " + orderNumber + ", Line Number: " + lineNumber + ", Product ID: " + productID + ", Product Description: " + productDescription + ", Quantity: " + quantity + ", Price: " + price + '\n';
     }
 
     public OrderItem(int orderNumber, int lineNumber, int productID, String productDescription, int quantity, double price) {
